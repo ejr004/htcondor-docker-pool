@@ -68,4 +68,4 @@ You will see the sleep.log and outfile.txt show up in the /sleep_job directory i
 ` docker exec -it {condor_cm/condor_submitter/condor_executor} bash # depends on which container you want to get into`
 
 ## Contributing
-Please feel free to create issues to discuss any bugs or further enhancements to this project. I know there are many as I quickly hacked it together during the HTCondor Workshop 2018 with Greg Thain.
+Please feel free to create issues to discuss any bugs or further enhancements to this project. I know there are many as I quickly put it together during the HTCondor Workshop 2018.

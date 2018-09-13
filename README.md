@@ -10,7 +10,7 @@ If you want to run a personal condor container instead (submit node, execute nod
 
 # Setting up a distributer condor cluster
 
-The first step is to clone this repository into all the nodes that are part of your swarm cluster. From now onwards, this directory will be referred to as **"repo_dir"**
+The first step is to clone this repository into all the nodes that are part of your swarm cluster. From now onwards, this directory will be referred to as **"repo_dir"**.
 
 ## Attachable overlay network
 - On your swarm master node, run **repo_dir/network_setup.sh** to setup an overlay network to which all containers will attach to.
@@ -45,7 +45,7 @@ You will see the sleep.log and outfile.txt show up in the /sleep_job directory i
 - The knobs for submit machine can be specified in the file: repo_dir/condor_submit_node/50PC.config
 - The knobs for execute mahcine can be specified in the file: repo_dir/condor_execute_node/50PC.config
 - Anytime you change a knob outside the container, you need to 
-  1. docker stop {container_name} && docker rm {container_name}, where {container_name} can be any of condor_cm/ condor_submitter/ condor_executer. 
+  1. `docker stop {container_name} && docker rm {container_name}`, where {container_name} can be any of condor_cm/ condor_submitter/ condor_executer. 
   1. rebuild the image and start the container, you can do so by re
 - Anytime you change the config files inside the container, you need to run ```condor_reconfig ``` for the changes to be reflected.
 - You can get a shell session inside any container by going to the particular VM/machine that is running the container and then using 

@@ -1,6 +1,7 @@
 # HTCondor in a container
 This repository provides containerized version of a basic HTCondor distributed site with a submit node, execute node and central manager node, running currently on a Docker Swarm network.
 
+If you want to run a personal condor container instead (submit node, execute node and central manager node in the same container), you should check out [this repository](https://github.com/maany/personal_condor_docker) instead 
 
 # Requirements and Resources
 - You need VM's or bare metal machines that are part of a swarm cluster.

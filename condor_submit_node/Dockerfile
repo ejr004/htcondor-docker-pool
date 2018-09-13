@@ -21,9 +21,8 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-RUN adduser -m condor-user
+RUN adduser -m condor_user
 VOLUME [ "/sys/fs/cgroup" ]
 COPY 50PC.config /etc/condor/conf.d/
-USER condor-user
-COPY sleep_job ~/sleep_job
+COPY sleep_job /sleep_job
 CMD ["/usr/sbin/init"]

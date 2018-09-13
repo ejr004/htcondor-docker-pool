@@ -6,7 +6,12 @@ If you want to run a personal condor container instead (submit node, execute nod
 # Requirements and Resources
 - You need VM's or bare metal machines that are part of a swarm cluster.
 - Instructions to install docker-ce : https://docs.docker.com/install/linux/docker-ce/centos/. On a CC7 host, you can use the instructions [here](https://github.com/WLCG-Lightweight-Sites/wlcg_lightweight_site_ce_cream/blob/master/yaim/README.md) to setup docker.
-- Instructions to set up a swarm cluster: https://docs.docker.com/engine/swarm/swarm-tutorial/. Make sure you allow traffic on  the firewall ports used by swarm nodes to communicate. (described towards the end in the first page of the tutorial)
+- Instructions to set up a swarm cluster:  
+  - On the host that you want to act as the swarm manager,
+    ```docker swarm init```
+  - The command above intializes the smarm manager and prints the **join-command that you need to run on all the workers that are part of the swarm cluster.**
+  - On every other VM/machine, run the join command printed by the manager in the last step.
+  - Make sure you allow traffic on  the firewall ports used by swarm nodes to communicate. (described towards the end in the first page of the tutorial here: https://docs.docker.com/engine/swarm/swarm-tutorial/.)
 
 # Setting up a distributer condor cluster
 
@@ -17,15 +22,24 @@ The first step is to clone this repository into all the nodes that are part of y
 
 ## Central Manager
 - On the node where you want to run a container for condor central manager, run 
-```repo_dir/condor_central_manager/run_condor_cm.sh```
+```
+cd repo_dir/condor_central_manager/
+./run_condor_cm.sh
+```
 
 ## Submit Node
 - On the node where you want to run a container for a condor submit machine, run 
-```repo_dir/condor_submit_node/run_condor_submitter.sh```
+```
+cd repo_dir/condor_submit_node
+./run_condor_submitter.sh
+```
 
 ## Execute Node 
 - On the node where you want to run a container for a condor execute machine, run 
-```repo_dir/condor_submit_node/run_condor_executor.sh```
+```
+cd repo_dir/condor_execute_node
+./run_condor_executor.sh
+```
 
 ### Checking the status on condor pool
 - When you run `condor_status` inside any container, you should see 2 slots per execute node:
@@ -34,6 +48,8 @@ The first step is to clone this repository into all the nodes that are part of y
 ## Submit a sleep job
 If run_condor_submitter.sh ran successfully, you should already have a shell into the submit node container. If not, fix the errors and use `docker exec -it condor_submitter bash` to get a shell session inside the container for condor submit node. Once you are inside the container, use the following commands to submit the sample sleep job which is already present in the container.
 ``` 
+chown -R condor_user /sleep_job
+su condor_user
 cd /sleep_job
 condor_submit ./sleep.sub 
 ```

@@ -13,7 +13,7 @@ If you want to run a personal condor container instead (submit node, execute nod
   - On every other VM/machine, run the join command printed by the manager in the last step.
   - Make sure you allow traffic on  the firewall ports used by swarm nodes to communicate. (described towards the end in the first page of the tutorial here: https://docs.docker.com/engine/swarm/swarm-tutorial/.)
 
-# Setting up a distributer condor cluster
+# Setting up a distributed condor cluster
 
 The first step is to clone this repository into all the nodes that are part of your swarm cluster. From now onwards, this directory will be referred to as **"repo_dir"**.
 

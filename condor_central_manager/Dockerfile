@@ -20,5 +20,5 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
-COPY 50PC.config /etc/condor/conf.d/
+COPY 50PC.config /etc/condor/config.d/
 CMD ["/usr/sbin/init"]

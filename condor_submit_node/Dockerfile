@@ -23,6 +23,6 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN adduser -m condor_user
 VOLUME [ "/sys/fs/cgroup" ]
-COPY 50PC.config /etc/condor/conf.d/
+COPY 50PC.config /etc/condor/config.d/
 COPY sleep_job /sleep_job
 CMD ["/usr/sbin/init"]

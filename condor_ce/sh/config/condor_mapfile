@@ -1,0 +1,18 @@
+#KERBEROS ^([^@/])@(.)$ \1@cern.ch
+KERBEROS ([^/]*)/?[^@]*@(.*) \1@\2
+#GSI "^\/DC\=com\/DC\=DigiCert-Grid\/O=Open Science Grid\/OU\=Services\/CN\=(host\/)?([A-Za-z0-9.\-]*)$" \2@daemon.opensciencegrid.org
+#GSI "^\/DC\=DigiCert-Grid\/DC\=com\/O=Open Science Grid\/OU\=Services\/CN\=(host\/)?([A-Za-z0-9.\-]*)$" \2@daemon.opensciencegrid.org
+#GSI "^\/DC\=org\/DC\=opensciencegrid\/O=Open Science Grid\/OU\=Services\/CN\=(host\/)?([A-Za-z0-9.\-]*)$" \2@daemon.opensciencegrid.org
+#GSI "/DC=ch/DC=cern/OU=computers/CN=cecollector1\.cern\.ch.*" site-collector@cern.ch
+#GSI "/DC=ch/DC=cern/OU=computers/CN=lws-condor\.cern\.ch.*" computing-element@cern.ch
+#GSI "/DC=ch/DC=cern/OU=computers/CN=mcplots2condor\.cern\.ch.*" test4theory
+#GSI "/DC=ch/DC=cern/OU=computers/CN=voboxalice5\.cern\.ch.*" voboxalice5
+#GSI "/DC=ch/DC=cern/OU=computers/CN=mcplots\.cern\.ch.*" test4theory
+#GSI "(CN=lfield)" lfield
+#GSI "/DC=ch/DC=cern/OU=computers/CN=atlas-injector\.cern\.ch.*" atlasinjector
+GSI (.*) slot1
+#GSI (.*) GSS_ASSIST_GRIDMAP
+#GSI "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=?([A-Za-z0-9.\-]*)/CN=(\d*)/CN=?([A-Za-z0-9.: \-]*)" \1@cern.ch
+#GSI "(/CN=[-.A-Za-z0-9/= ]+)" \1@unmapped.opensciencegrid.org
+CLAIMTOBE .* anonymous@claimtobe
+FS (.*) \1

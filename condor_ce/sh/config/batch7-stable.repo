@@ -1,0 +1,5 @@
+[batch7-stable]
+gpgcheck=0
+name=added from: http://linuxsoft.cern.ch/internal/repos/batch7-stable/x86_64/os/
+baseurl=http://linuxsoft.cern.ch/internal/repos/batch7-stable/x86_64/os
+enabled=1

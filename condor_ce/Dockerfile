@@ -4,8 +4,9 @@ RUN wget https://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor
 RUN rpm --import RPM-GPG-KEY-HTCondor
 WORKDIR /etc/yum.repos.d/
 RUN wget https://research.cs.wisc.edu/htcondor/yum/repo.d/htcondor-stable-rhel7.repo
+RUN yum -y install condor, htcondor-ce-condor, vim
 COPY sh/config/batch7-stable.repo /etc/yum.repos.d/batch7-stable.repo
-RUN yum -y install htcondor-ce-condor, globus-rsl, empty-ca-certs
+RUN yum -y globus-rsl, empty-ca-certs
 
 RUN yum install -y iproute openssh openssh-server openssh-clients openssl-libs
 RUN yum install -y net-tools

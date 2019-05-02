@@ -10,3 +10,4 @@ chmod 600 /etc/grid-security/hostkey.pem
 cp -rf /etc/simple_grid/config/certificates /etc/grid-security
 cp -rf /etc/simple_grid/config/gsi.conf /etc/grid-security
 cp -rf /etc/simple_grid/config/sleep_job /etc/simple_grid/sleep_job
+chown -R condor_user /etc/simple_grid/sleep_job

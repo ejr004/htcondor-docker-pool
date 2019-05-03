@@ -11,6 +11,7 @@ RUN yum -y install globus-rsl empty-ca-certs
 RUN yum install -y iproute openssh openssh-server openssh-clients openssl-libs
 RUN yum install -y net-tools
 RUN useradd -m slot1 && useradd -m slot2
+RUN useradd -m test
 RUN adduser -m condor_user
 RUN mkdir -p /etc/grid-security/
 VOLUME ["/etc/simple_grid"]

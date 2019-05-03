@@ -10,7 +10,7 @@ KERBEROS ([^/]*)/?[^@]*@(.*) \1@\2
 #GSI "/DC=ch/DC=cern/OU=computers/CN=mcplots\.cern\.ch.*" test4theory
 #GSI "(CN=lfield)" lfield
 #GSI "/DC=ch/DC=cern/OU=computers/CN=atlas-injector\.cern\.ch.*" atlasinjector
-GSI (.*) slot1
+GSI (.*) test
 #GSI (.*) GSS_ASSIST_GRIDMAP
 #GSI "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=?([A-Za-z0-9.\-]*)/CN=(\d*)/CN=?([A-Za-z0-9.: \-]*)" \1@cern.ch
 #GSI "(/CN=[-.A-Za-z0-9/= ]+)" \1@unmapped.opensciencegrid.org

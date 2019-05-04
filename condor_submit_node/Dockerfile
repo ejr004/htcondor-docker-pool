@@ -12,7 +12,7 @@ RUN useradd -m condor_user
 RUN mkdir -p /home/condor_user/.globus
 COPY 50PC.config /etc/condor/config.d/
 COPY sleep_job /home/condor_user/
-RUN chown -R condor_user /home/condor/sleep_job
+RUN chown -R condor_user /home/condor_user/sleep_job
 RUN mkdir /etc/simple_grid
 WORKDIR /etc/simple_grid/
 ENV container docker

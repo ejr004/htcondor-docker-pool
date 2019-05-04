@@ -9,5 +9,5 @@ cp /etc/simple_grid/config/hostkey.pem /etc/grid-security/
 chmod 600 /etc/grid-security/hostkey.pem
 cp -rf /etc/simple_grid/config/certificates /etc/grid-security
 cp -rf /etc/simple_grid/config/gsi.conf /etc/grid-security
-cp -rf /etc/simple_grid/config/sleep_job /etc/simple_grid/sleep_job
-chown -R condor_user /etc/simple_grid/sleep_job
+cp -rf /etc/simple_grid/config/sleep_job /home/condor_user/sleep_job
+chown -R condor_user /home/condor_user

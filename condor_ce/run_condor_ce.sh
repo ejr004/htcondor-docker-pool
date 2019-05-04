@@ -1,7 +1,7 @@
 #!/bin/bash
 docker build -t condor_ce .
 docker run --net condor_pool_net \
-    --ip 10.0.2.51 \
+    --ip 10.0.2.151 \
     --hostname=$(hostname) \
     -itd --name condor_ce \
     -v /sys/fs/cgroup:/sys/fs/cgroup \

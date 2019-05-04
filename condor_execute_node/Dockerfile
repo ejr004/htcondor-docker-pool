@@ -22,6 +22,5 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN useradd -m slot1 && useradd -m slot2
 VOLUME [ "/sys/fs/cgroup" ]
-VOLUME /cvmfs
 COPY 50PC.config /etc/condor/config.d/
 CMD ["/usr/sbin/init"]

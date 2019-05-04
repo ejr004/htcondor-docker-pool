@@ -20,7 +20,7 @@ COPY sleep_job /home/condor_user/sleep_job
 RUN chown -R condor_user /home/condor_user/sleep_job
 ## /etc/simple_grid ##
 RUN mkdir /etc/simple_grid
-WORKDIR /etc/simple_grid/
+WORKDIR /etc/simple_grid/config
 ## systemctl ##
 ENV container docker
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \

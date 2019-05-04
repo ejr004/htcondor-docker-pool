@@ -16,7 +16,7 @@ RUN yum install -y ca-policy-egi-core fetch-crl
 RUN useradd -m condor_user
 RUN mkdir -p /home/condor_user/.globus
 COPY 50PC.config /etc/condor/config.d/
-COPY sleep_job /home/condor_user/
+COPY sleep_job /home/condor_user/sleep_job
 RUN chown -R condor_user /home/condor_user/sleep_job
 ## /etc/simple_grid ##
 RUN mkdir /etc/simple_grid

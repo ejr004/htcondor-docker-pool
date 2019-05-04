@@ -8,7 +8,8 @@ WORKDIR /etc/yum.repos.d/
 RUN wget https://research.cs.wisc.edu/htcondor/yum/repo.d/htcondor-stable-rhel7.repo
 RUN yum -y install condor htcondor-ce-client
 ## net tools ##
-RUN yum install -y net-tools iproute openssh openssh-server openssh-clients openssl-libs
+RUN yum install -y net-tools iproute openssh openssh-server openssh-clients openssl-libs telnet
+RUN yum install -y vim less
 ## CA ##
 RUN wget -O /etc/yum.repos.d/EGI-trustanchors.repo http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo 
 RUN yum install -y ca-policy-egi-core fetch-crl

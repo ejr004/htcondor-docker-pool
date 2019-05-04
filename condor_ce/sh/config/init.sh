@@ -13,3 +13,5 @@ chown -R condor_user /home/condor_user
 
 cp /etc/simple_grid/config/condor/50PC.config /etc/condor/config.d/
 cp /etc/simple_grid/config/condor/99.conf /etc/condor/config.d/
+
+systemctl start condor

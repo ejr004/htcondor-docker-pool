@@ -1,5 +1,4 @@
 #!/bin/bash
-cp /etc/simple_grid/config/50PC.config /etc/condor/config.d/
 cp /etc/simple_grid/config/59_site_security.conf /etc/condor-ce/config.d/
 cp /etc/simple_grid/config/60_configured_attributes.conf /etc/condor-ce/config.d/
 cp /etc/simple_grid/config/99.conf /etc/condor-ce/config.d/
@@ -11,3 +10,6 @@ cp -rf /etc/simple_grid/config/certificates /etc/grid-security
 cp -rf /etc/simple_grid/config/gsi.conf /etc/grid-security
 cp -rf /etc/simple_grid/config/sleep_job /home/condor_user/sleep_job
 chown -R condor_user /home/condor_user
+
+cp /etc/simple_grid/config/condor/50PC.config /etc/condor/config.d/
+cp /etc/simple_grid/config/condor/99.conf /etc/condor/config.d/

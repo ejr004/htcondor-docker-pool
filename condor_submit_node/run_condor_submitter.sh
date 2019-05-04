@@ -1,7 +1,7 @@
 #!/bin/bash
 docker build -t condor_submitter .
 docker run -itd \
-    --net condor_pool_net \
+    --net host \
     --name condor_submitter \
     -v /sys/fs/cgroup:/sys/fs/cgroup \
     -v $(pwd)/sh/config:/etc/simple_grid/config \

@@ -14,14 +14,5 @@ chown -R condor_user /home/condor_user
 cp /etc/simple_grid/config/condor/50PC.config /etc/condor/config.d/
 cp /etc/simple_grid/config/condor/99.conf /etc/condor/config.d/
 
-## shared port forwarding ##
-swarm_str=$(ifconfig eth0 | grep inet)
-swarm_arr=($swarm_str)
-eth0_swarm_ip=${swarm_arr[1]}
-
-docker_str=$(ifconfig eth1 | grep inet)
-docker_arr=($docker_str)
-eth1_docker_ip=${docker_arr[1]}
-
 systemctl start condor
 systemctl start condor-ce

@@ -23,10 +23,5 @@ docker_str=$(ifconfig eth1 | grep inet)
 docker_arr=($docker_str)
 eth1_docker_ip=${docker_arr[1]}
 
-iptables -A FORWARD -i eth1 -o eth0 -p tcp --syn --dport 9619 -m conntrack --ctstate NEW -j ACCEPT
-iptables -A FORWARD -i eth0 -o eth1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-iptables -A FORWARD -i eth1 -o eth0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 9619 -j DNAT --to-destination ${eth0_swarm_ip}
-iptables -t nat -A POSTROUTING -o eth0 -p tcp --dport 9619 -d ${eth0_swarm_ip} -j SNAT --to-source ${eth1_docker_ip}
-
 systemctl start condor
+systemctl start condor-ce

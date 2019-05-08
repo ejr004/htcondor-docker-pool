@@ -10,4 +10,4 @@ docker run --net condor_pool_net \
     --privileged \
     condor_ce
 #docker exec -it condor_ce /etc/simple_grid/condig/init.sh
-docker exec -it condor_ce01 bash
+docker exec -it condor_ce02 bash

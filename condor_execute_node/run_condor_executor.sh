@@ -1,6 +1,6 @@
 #!/bin/bash
 docker build -t condor_executor .
-docker run --net host  \
+docker run --net condor_pool_net  \
     -itd \
     --name condor_executor \
     -v /sys/fs/cgroup:/sys/fs/cgroup \
